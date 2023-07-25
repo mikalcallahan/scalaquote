@@ -4,6 +4,7 @@
 //> using dep com.lihaoyi::upickle:3.1.2
 
 import upickle.default.*
+import java.nio.file.Paths
 
 case class Quote(
     author: String,
@@ -13,11 +14,11 @@ case class Quote(
 case class Quotes(quotes: List[Quote]) derives ReadWriter
 
 @main def hello(): Unit = {
-  val readQuotes = read[Quotes](os.read(os.pwd / "quotes.json")) 
+  // val dir = System.getProperty("user.dir")
+  val readQuotes = read[Quotes](os.read(os.home / "Developer" / "desktop" / "scalaquote" / "quotes.json"))
   val index = (new scala.util.Random).nextInt(readQuotes.quotes.length)
 
   println(
     s"${readQuotes.quotes(index).text}\n- ${readQuotes.quotes(index).author}"
   )
-
 }
