@@ -14,7 +14,6 @@ case class Quote(
 case class Quotes(quotes: List[Quote]) derives ReadWriter
 
 @main def hello(): Unit = {
-  // val dir = System.getProperty("user.dir")
   val readQuotes = read[Quotes](os.read(os.home / ".config" / "scalaquote" / "quotes.json"))
   val index = (new scala.util.Random).nextInt(readQuotes.quotes.length)
 
