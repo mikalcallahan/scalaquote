@@ -1,7 +1,7 @@
 #!/usr/bin/env -S scala-cli -S 3
 
 //> using toolkit latest
-//> using dep com.lihaoyi::upickle:3.1.2
+//> using dep com.lihaoyi::upickle:3.1.3
 
 import upickle.default.*
 import java.nio.file.Paths
